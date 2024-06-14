@@ -38,6 +38,8 @@ const emit = defineEmits(['openDrawer'])
           </li>
         </router-link>
       </ul>
+      </div>
+   <div class="nav-container">
       <ul class="nav-column">
         <router-link to="/profile">
           <li class="nav-item">
