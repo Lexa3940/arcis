@@ -25,33 +25,37 @@ const emit = defineEmits(['openDrawer'])
       </div>
     </div>
 
-    <ul class="nav-container">
-      <li @click="() => emit('openDrawer')" class="nav-item">
-        <img src="/cart.svg" alt="Cart" class="nav-icon" />
-        <span>Корзина</span>
-      </li>
-
-      <router-link to="/favorites">
-        <li class="nav-item">
-          <img src="/heart.svg" alt="Favorites" class="nav-icon" />
-          <span>Избранное</span>
+    <div class="nav-container">
+      <ul class="nav-column">
+        <li @click="() => emit('openDrawer')" class="nav-item">
+          <img src="/cart.svg" alt="Cart" class="nav-icon" />
+          <span>Корзина</span>
         </li>
-      </router-link>
 
-      <router-link to="/profile">
-        <li class="nav-item">
-          <img src="/profile.svg" alt="Profile" class="nav-icon" />
-          <span>О нас</span>
-        </li>
-      </router-link>
+        <router-link to="/favorites">
+          <li class="nav-item">
+            <img src="/heart.svg" alt="Favorites" class="nav-icon" />
+            <span>Избранное</span>
+          </li>
+        </router-link>
+      </ul>
 
-      <router-link to="/conf">
-        <li class="nav-item">
-          <img src="/product/password_protect_secure_security_privacy_lock_padlock_icon_219328.svg" alt="Confidentiality" class="nav-icon" />
-          <span>Конфиденциальность</span>
-        </li>
-      </router-link>
-    </ul>
+      <ul class="nav-column">
+        <router-link to="/profile">
+          <li class="nav-item">
+            <img src="/profile.svg" alt="Profile" class="nav-icon" />
+            <span>О нас</span>
+          </li>
+        </router-link>
+
+        <router-link to="/conf">
+          <li class="nav-item">
+            <img src="/product/password_protect_secure_security_privacy_lock_padlock_icon_219328.svg" alt="Confidentiality" class="nav-icon" />
+            <span>Конфиденциальность</span>
+          </li>
+        </router-link>
+      </ul>
+    </div>
   </header>
 </template>
 
@@ -65,6 +69,7 @@ const emit = defineEmits(['openDrawer'])
   grid-gap: 1rem;
   border-bottom: 1px solid #cbd5e0;
   padding: 1rem;
+  text-align: center;
 }
 
 @media(min-width: 768px) {
@@ -73,46 +78,65 @@ const emit = defineEmits(['openDrawer'])
       "logo info nav";
     grid-template-columns: auto 1fr auto;
     align-items: center;
+    text-align: left;
   }
 }
 
 .logo-container {
   grid-area: logo;
   display: flex;
+  justify-content: center;
   align-items: center;
 }
 
 .logo {
-  max-height: 50px;
+  max-height: 70px;
+}
+
+@media(min-width: 768px) {
+  .logo {
+    max-height: 100px;
+  }
 }
 
 .info-container {
   grid-area: info;
   display: flex;
   flex-direction: column;
-  text-align: center;
+  justify-content: center;
 }
 
 @media(min-width: 768px) {
   .info-container {
     flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-around;
+    text-align: left;
   }
 }
 
 .working-hours, .phone-numbers {
   margin: 0 1rem;
-  text-align: left;
 }
 
 .nav-container {
   grid-area: nav;
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+}
+
+@media(min-width: 768px) {
+  .nav-container {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+
+.nav-column {
+  display: flex;
+  flex-direction: column;
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 0 1rem;
 }
 
 .nav-item {
@@ -121,6 +145,7 @@ const emit = defineEmits(['openDrawer'])
   cursor: pointer;
   color: #718096;
   transition: color 0.3s ease;
+  margin-bottom: 0.5rem;
   white-space: nowrap;
 }
 
