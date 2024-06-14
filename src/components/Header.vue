@@ -118,8 +118,8 @@ const emit = defineEmits(['openDrawer'])
   .nav-container {
     grid-area: nav;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
     margin-top: 0.5rem;
   }
@@ -129,7 +129,7 @@ const emit = defineEmits(['openDrawer'])
     flex-direction: column;
     list-style: none;
     padding: 0;
-    margin: 0.5rem;
+    margin: 1rem;
   }
 
   .nav-item {
