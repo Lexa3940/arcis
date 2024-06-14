@@ -78,6 +78,8 @@ const emit = defineEmits(['openDrawer'])
     grid-template-columns: auto 1fr auto;
     align-items: center;
     text-align: left;
+    grip-gap: 0.5rem;
+    margin: 0.2rem;
   }
 }
 
