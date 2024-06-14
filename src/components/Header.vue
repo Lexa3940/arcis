@@ -64,6 +64,7 @@ const emit = defineEmits(['openDrawer'])
     "info"
     "nav";
   grid-template-rows: auto auto auto;
+  grid-template-colums: 1fr;
   grid-gap: 1rem;
   border-bottom: 1px solid #cbd5e0;
   padding: 1rem;
