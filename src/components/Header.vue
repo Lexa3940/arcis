@@ -129,7 +129,7 @@ const emit = defineEmits(['openDrawer'])
     flex-direction: column;
     list-style: none;
     padding: 0;
-    margin: 1rem;
+    margin: 0.5rem;
   }
 
   .nav-item {
@@ -138,7 +138,7 @@ const emit = defineEmits(['openDrawer'])
     cursor: pointer;
     color: #718096;
     transition: color 0.3s ease;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
     white-space: nowrap;
   }
 
