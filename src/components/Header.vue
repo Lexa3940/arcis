@@ -98,7 +98,7 @@ const emit = defineEmits(['openDrawer'])
   }
 
   .logo {
-    max-height: 70px;
+    max-height: 100px;
   }
 
   .info-container {
