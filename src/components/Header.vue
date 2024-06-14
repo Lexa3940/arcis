@@ -138,7 +138,7 @@ const emit = defineEmits(['openDrawer'])
     cursor: pointer;
     color: #718096;
     transition: color 0.3s ease;
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
     white-space: nowrap;
   }
 
