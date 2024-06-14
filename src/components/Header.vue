@@ -7,54 +7,114 @@ const emit = defineEmits(['openDrawer'])
 </script>
 
 <template>
-  <header class="flex justify-between border-b border-slate-300 px-8 py-8">
-    <router-link to="/">
-      <div class="flex items-center gap-4">
-        <img src="/logo.png" alt="logo" class="w-27" />
-      </div>
+  <header class="header-container">
+    <router-link to="/" class="logo-container">
+      <img src="/logo.png" alt="logo" class="logo" />
     </router-link>
 
-    <div class="text-xl font-vold gap-4 text-wrap pt-10">
-      <h1>Режим работы:</h1>
-      <p>Ежедневно с 8:00 до 18:00</p>
+    <div class="info-container">
+      <div class="working-hours">
+        <h1>Режим работы:</h1>
+        <p>Ежедневно</p>
+        <p>С 8:00 до 18:00</p>
+      </div>
+      <div class="phone-numbers">
+        <h1>Номера телефонов:</h1>
+        <p>+7-995-208-44-74</p>
+        <p>+7-861-205-00-91</p>
+      </div>
     </div>
-    <article class="text-xl font-vold gap-4 text-wrap pt-10">
-      <h1>Желаете связаться с нами? Звоните по номеру:</h1>
-      <p>+7-995-208-44-74 или +7-861-205-00-91</p>
-    </article>
 
-    <ul class="frex items-center gap-10 pt-8">
-      <li
-        @click="() => emit('openDrawer')"
-        class="flex items-center cursor-pointer gap-3 text-grey-500 hover:text-black"
-      >
-        <img src="/cart.svg" alt="Cart" />
-        <span>{{ totalPrice }}</span>
+    <ul class="nav-container">
+      <li @click="() => emit('openDrawer')" class="nav-item">
+        <img src="/cart.svg" alt="Cart" class="nav-icon" />
+        <span>Корзина</span>
       </li>
 
       <router-link to="/favorites">
-        <li class="flex items-center cursor-pointer gap-3 text-grey-500 hover:text-black">
-          <img src="/heart.svg" alt="Cart" />
+        <li class="nav-item">
+          <img src="/heart.svg" alt="Favorites" class="nav-icon" />
           <span>Избранное</span>
         </li>
       </router-link>
 
       <router-link to="/profile">
-        <li class="flex items-center cursor-pointer gap-3 text-grey-500 hover:text-black">
-          <img src="/profile.svg" alt="Cart" />
+        <li class="nav-item">
+          <img src="/profile.svg" alt="Profile" class="nav-icon" />
           <span>О нас</span>
         </li>
       </router-link>
 
       <router-link to="/conf">
-        <li class="flex items-center cursor-pointer gap-3 text-grey-500 hover:text-black">
-          <img
-            src="\public\product\password_protect_secure_security_privacy_lock_padlock_icon_219328.svg"
-            alt="confi"
-          />
-          <span>Политика конфиденциальности</span>
+        <li class="nav-item">
+          <img src="/product/password_protect_secure_security_privacy_lock_padlock_icon_219328.svg" alt="Confidentiality" class="nav-icon" />
+          <span>Конфиденциальность</span>
         </li>
       </router-link>
     </ul>
   </header>
 </template>
+
+<style scoped>
+.header-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-bottom: 1px solid #cbd5e0;
+  padding: 1rem;
+}
+
+@media(min-width: 768px) {
+  .header-container {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.logo-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  max-height: 50px;
+}
+
+.info-container {
+  display: flex;
+  flex: 2;
+  justify-content: space-around;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.working-hours, .phone-numbers {
+  text-align: left;
+}
+
+.nav-container {
+  display: flex;
+  flex: 1;
+  justify-content: space-around;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: #718096;
+  transition: color 0.3s ease;
+}
+
+.nav-item:hover {
+  color: #000;
+}
+
+.nav-icon {
+  margin-right: 0.5rem;
+}
+</style>
