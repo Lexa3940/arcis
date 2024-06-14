@@ -78,8 +78,8 @@ const emit = defineEmits(['openDrawer'])
     grid-template-columns: auto 1fr auto;
     align-items: center;
     text-align: left;
-    grip-gap: 20rem;
-    margin: 0.2rem;
+    grip-gap: 1rem;
+    padding: 1rem;
   }
 }
 
@@ -88,6 +88,7 @@ const emit = defineEmits(['openDrawer'])
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-right: 1rem;
 }
 
 .logo {
@@ -107,6 +108,7 @@ const emit = defineEmits(['openDrawer'])
   justify-content: center;
   align-items: center;
   margin-top: 0.5rem;
+  margin-right: 1rem;
 }
 
 @media(min-width: 768px) {
