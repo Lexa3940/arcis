@@ -9,7 +9,7 @@ const emit = defineEmits(['openDrawer'])
 <template>
   <header class="header-container">
     <router-link to="/" class="logo-container">
-      <img src="/logo.png" alt="logo" class="logo" />
+      <img src="/logo(1).svg" alt="logo" class="logo" />
     </router-link>
 
     <div class="info-container">
