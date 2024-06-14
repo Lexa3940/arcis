@@ -83,10 +83,17 @@ const emit = defineEmits(['openDrawer'])
 
 .info-container {
   display: flex;
+  flex-direction: column;
   flex: 2;
-  justify-content: space-around;
+  justify-content: space-between;
   text-align: center;
   margin: 1rem 0;
+}
+
+@media(min-width: 768px) {
+  .info-container {
+    flex-direction: row;
+  }
 }
 
 .working-hours, .phone-numbers {
