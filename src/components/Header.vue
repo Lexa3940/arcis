@@ -57,22 +57,27 @@ const emit = defineEmits(['openDrawer'])
 
 <style scoped>
 .header-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  display: grid;
+  grid-template-areas: 
+    "logo"
+    "info"
+    "nav";
+  grid-gap: 1rem;
   border-bottom: 1px solid #cbd5e0;
   padding: 1rem;
 }
 
 @media(min-width: 768px) {
   .header-container {
-    flex-direction: row;
+    grid-template-areas: 
+      "logo info nav";
+    grid-template-columns: 1fr 2fr 1fr;
     align-items: center;
   }
 }
 
 .logo-container {
-  flex: 1;
+  grid-area: logo;
   display: flex;
   align-items: center;
 }
@@ -82,18 +87,10 @@ const emit = defineEmits(['openDrawer'])
 }
 
 .info-container {
+  grid-area: info;
   display: flex;
-  flex-direction: column;
-  flex: 2;
-  justify-content: space-between;
+  justify-content: space-around;
   text-align: center;
-  margin: 1rem 0;
-}
-
-@media(min-width: 768px) {
-  .info-container {
-    flex-direction: row;
-  }
 }
 
 .working-hours, .phone-numbers {
@@ -101,8 +98,8 @@ const emit = defineEmits(['openDrawer'])
 }
 
 .nav-container {
+  grid-area: nav;
   display: flex;
-  flex: 1;
   justify-content: space-around;
   list-style: none;
   padding: 0;
