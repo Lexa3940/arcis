@@ -122,7 +122,7 @@ const emit = defineEmits(['openDrawer'])
     justify-content: space-between;
     align-items: center;
     margin-top: 0.5rem;
-    margin-left: 5rem;
+    margin-left: 30rem;
   }
 
   .nav-column {
