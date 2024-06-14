@@ -87,10 +87,11 @@ const emit = defineEmits(['openDrawer'])
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 1rem;
 }
 
 .logo {
-  max-height: 70px;
+  max-height: 80px;
 }
 
 @media(min-width: 768px) {
@@ -104,6 +105,7 @@ const emit = defineEmits(['openDrawer'])
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: 2rem; /* Увеличиваем отступ между working-hours и phone-numbers */
 }
 
 @media(min-width: 768px) {
@@ -111,11 +113,18 @@ const emit = defineEmits(['openDrawer'])
     flex-direction: row;
     justify-content: space-around;
     text-align: left;
+    gap: 1rem; /* Уменьшаем отступ между элементами на больших экранах */
   }
 }
 
 .working-hours, .phone-numbers {
   margin: 0 1rem;
+}
+
+@media(max-width: 767px) {
+  .working-hours {
+    margin-bottom: 1rem; /* Увеличиваем отступ между working-hours и phone-numbers */
+  }
 }
 
 .nav-container {
