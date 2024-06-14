@@ -31,7 +31,6 @@ const emit = defineEmits(['openDrawer'])
           <img src="/cart.svg" alt="Cart" class="nav-icon" />
           <span>Корзина</span>
         </li>
-
         <router-link to="/favorites">
           <li class="nav-item">
             <img src="/heart.svg" alt="Favorites" class="nav-icon" />
@@ -39,7 +38,6 @@ const emit = defineEmits(['openDrawer'])
           </li>
         </router-link>
       </ul>
-
       <ul class="nav-column">
         <router-link to="/profile">
           <li class="nav-item">
@@ -47,7 +45,6 @@ const emit = defineEmits(['openDrawer'])
             <span>О нас</span>
           </li>
         </router-link>
-
         <router-link to="/conf">
           <li class="nav-item">
             <img src="/product/password_protect_secure_security_privacy_lock_padlock_icon_219328.svg" alt="Confidentiality" class="nav-icon" />
@@ -66,6 +63,7 @@ const emit = defineEmits(['openDrawer'])
     "logo"
     "info"
     "nav";
+  grid-template-rows: auto auto auto;
   grid-gap: 1rem;
   border-bottom: 1px solid #cbd5e0;
   padding: 1rem;
@@ -104,7 +102,8 @@ const emit = defineEmits(['openDrawer'])
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 0.5rem; /* Уменьшен отступ сверху */
+  align-items: center;
+  margin-top: 0.5rem;
 }
 
 @media(min-width: 768px) {
@@ -112,27 +111,31 @@ const emit = defineEmits(['openDrawer'])
     flex-direction: row;
     justify-content: space-around;
     text-align: left;
-    margin-top: 0; /* Убираем отступ для больших экранов */
+    align-items: center;
+    margin-top: 0;
   }
 }
 
 .working-hours, .phone-numbers {
-  margin: 0 0.5rem; /* Уменьшен отступ между колонками */
-  text-align: left;
+  margin: 0.5rem;
+  text-align: center;
 }
 
 .nav-container {
   grid-area: nav;
   display: flex;
   flex-direction: column;
-  margin-top: 0.5rem; /* Уменьшен отступ сверху */
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.5rem;
 }
 
 @media(min-width: 768px) {
   .nav-container {
     flex-direction: row;
     justify-content: space-around;
-    margin-top: 0; /* Убираем отступ для больших экранов */
+    align-items: center;
+    margin-top: 0;
   }
 }
 
@@ -141,7 +144,7 @@ const emit = defineEmits(['openDrawer'])
   flex-direction: column;
   list-style: none;
   padding: 0;
-  margin: 0 0.5rem; /* Уменьшен отступ между колонками */
+  margin: 0.5rem;
 }
 
 .nav-item {
