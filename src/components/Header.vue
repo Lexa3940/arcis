@@ -81,7 +81,7 @@ const emit = defineEmits(['openDrawer'])
     grid-template-columns: auto 1fr auto;
     align-items: center;
     text-align: left;
-    grid-gap: 1rem;
+    grid-gap: 1rem; /* одинаковое расстояние между строками и столбцами */
     border-bottom: 1px solid #cbd5e0;
     padding: 1rem;
   }
@@ -98,7 +98,7 @@ const emit = defineEmits(['openDrawer'])
   }
 
   .logo {
-    max-height: 100px;
+    max-height: 70px;
   }
 
   .info-container {
