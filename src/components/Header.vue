@@ -71,7 +71,7 @@ const emit = defineEmits(['openDrawer'])
   .header-container {
     grid-template-areas: 
       "logo info nav";
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns: auto 1fr auto;
     align-items: center;
   }
 }
@@ -89,11 +89,20 @@ const emit = defineEmits(['openDrawer'])
 .info-container {
   grid-area: info;
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
   text-align: center;
 }
 
+@media(min-width: 768px) {
+  .info-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
 .working-hours, .phone-numbers {
+  margin: 0 1rem;
   text-align: left;
 }
 
@@ -112,6 +121,7 @@ const emit = defineEmits(['openDrawer'])
   cursor: pointer;
   color: #718096;
   transition: color 0.3s ease;
+  white-space: nowrap;
 }
 
 .nav-item:hover {
