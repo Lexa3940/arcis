@@ -87,11 +87,10 @@ const emit = defineEmits(['openDrawer'])
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 1rem;
 }
 
 .logo {
-  max-height: 80px;
+  max-height: 70px;
 }
 
 @media(min-width: 768px) {
@@ -105,7 +104,7 @@ const emit = defineEmits(['openDrawer'])
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 2rem; /* Увеличиваем отступ между working-hours и phone-numbers */
+  margin-top: 0.5rem; /* Уменьшен отступ сверху */
 }
 
 @media(min-width: 768px) {
@@ -113,30 +112,27 @@ const emit = defineEmits(['openDrawer'])
     flex-direction: row;
     justify-content: space-around;
     text-align: left;
-    gap: 1rem; /* Уменьшаем отступ между элементами на больших экранах */
+    margin-top: 0; /* Убираем отступ для больших экранов */
   }
 }
 
 .working-hours, .phone-numbers {
-  margin: 0 1rem;
-}
-
-@media(max-width: 767px) {
-  .working-hours {
-    margin-bottom: 1rem; /* Увеличиваем отступ между working-hours и phone-numbers */
-  }
+  margin: 0 0.5rem; /* Уменьшен отступ между колонками */
+  text-align: left;
 }
 
 .nav-container {
   grid-area: nav;
   display: flex;
   flex-direction: column;
+  margin-top: 0.5rem; /* Уменьшен отступ сверху */
 }
 
 @media(min-width: 768px) {
   .nav-container {
     flex-direction: row;
     justify-content: space-around;
+    margin-top: 0; /* Убираем отступ для больших экранов */
   }
 }
 
@@ -145,7 +141,7 @@ const emit = defineEmits(['openDrawer'])
   flex-direction: column;
   list-style: none;
   padding: 0;
-  margin: 0 1rem;
+  margin: 0 0.5rem; /* Уменьшен отступ между колонками */
 }
 
 .nav-item {
