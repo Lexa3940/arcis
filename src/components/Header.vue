@@ -7,145 +7,101 @@ const emit = defineEmits(['openDrawer'])
 </script>
 
 <template>
-  <header class="header-container">
-    <router-link to="/" class="logo-container">
-      <img src="/logo(1).svg" alt="logo" class="logo" />
+  <header class="header-container flex justify-between items-center border-b border-slate-300 p-4">
+    <router-link to="/">
+      <div class="logo-container flex items-center">
+        <img src="/logo.png" alt="logo" class="logo relative" />
+      </div>
     </router-link>
 
-    <div class="info-container">
-      <div class="info-section working-hours">
-        <h1>Режим работы:</h1>
-        <p>Ежедневно</p>
-        <p>С 8:00 до 18:00</p>
-      </div>
-      <div class="info-section phone-numbers">
-        <h1>Номера телефонов:</h1>
-        <p>+7-995-208-44-74</p>
-        <p>+7-861-205-00-91</p>
-      </div>
+    <div class="info-container flex flex-col gap-2 text-xl font-bold text-wrap pt-4">
+      <h1 class="text-center">Режим работы:</h1>
+      <p class="text-center">Ежедневно</p>
+      <p class="text-center">С 8:00 до 18:00</p>
     </div>
 
-    <div class="nav-container">
-      <div class="nav-column">
-        <li @click="() => emit('openDrawer')" class="nav-item">
-          <img src="/cart.svg" alt="Cart" class="nav-icon" />
-          <span>Корзина</span>
+    <div class="nav-container flex items-center gap-4 pt-4">
+      <ul class="nav-list flex items-center gap-4">
+        <li
+          @click="() => emit('openDrawer')"
+          class="nav-item flex items-center cursor-pointer text-grey-500 hover:text-black"
+        >
+          <img src="/cart.svg" alt="Cart" class="nav-icon pr-2" />
+          <span class="text-xl">Корзина</span>
         </li>
+
         <router-link to="/favorites">
-          <li class="nav-item">
-            <img src="/heart.svg" alt="Favorites" class="nav-icon" />
-            <span>Избранное</span>
+          <li class="nav-item flex items-center cursor-pointer text-grey-500 hover:text-black">
+            <img src="/heart.svg" alt="Cart" class="nav-icon pr-1" />
+            <span class="text-xl pl-0.5">Избранное</span>
           </li>
         </router-link>
-      </div>
-      <div class="nav-column">
+      </ul>
+
+      <ul class="nav-list flex items-center gap-4">
         <router-link to="/profile">
-          <li class="nav-item">
-            <img src="/profile.svg" alt="Profile" class="nav-icon" />
-            <span>О нас</span>
+          <li class="nav-item flex items-center cursor-pointer text-grey-500 hover:text-black">
+            <img src="/profile.svg" alt="Cart" class="nav-icon px-2" />
+            <span class="text-xl">О нас</span>
           </li>
         </router-link>
+
         <router-link to="/conf">
-          <li class="nav-item">
-            <img src="/product/password_protect_secure_security_privacy_lock_padlock_icon_219328.svg" alt="Confidentiality" class="nav-icon" />
-            <span>Конфиденциальность</span>
+          <li class="nav-item flex items-center cursor-pointer text-grey-500 hover:text-black">
+            <img
+              src="\public\product\password_protect_secure_security_privacy_lock_padlock_icon_219328.svg"
+              alt="confi"
+              class="nav-icon pr-1.5 text-xl"
+            />
+            <span class="text-xl">Конфиденциальность</span>
           </li>
         </router-link>
-      </div>
+      </ul>
+    </div>
+
+    <div class="phone-container flex flex-col gap-2 text-xl font-bold text-wrap pt-4">
+      <h1 class="text-center">Номера телефонов:</h1>
+      <p class="text-center">+7-995-208-44-74</p>
+      <p class="text-center">+7-861-205-00-91</p>
     </div>
   </header>
 </template>
 
 <style scoped>
 .header-container {
-  display: grid;
-  grid-template-areas:
-    "logo info"
-    "nav nav";
-  grid-template-rows: auto auto;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 1rem;
-  border-bottom: 1px solid #cbd5e0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 1rem;
 }
 
-@media (min-width: 768px) {
-  .header-container {
-    grid-template-areas:
-      "logo info nav";
-    grid-template-columns: auto 1fr auto;
-    align-items: center;
-    grid-gap: 1rem;
-    padding: 1rem;
-  }
-}
-
 .logo-container {
-  grid-area: logo;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-right: 1rem;
 }
 
 .logo {
   max-height: 70px;
 }
 
-@media (min-width: 768px) {
-  .logo {
-    max-height: 100px;
-  }
-}
-
 .info-container {
-  grid-area: info;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  margin-top: 0.5rem;
-}
-
-@media (min-width: 768px) {
-  .info-container {
-    flex-direction: row;
-    justify-content: space-around;
-    text-align: left;
-    align-items: center;
-    margin-top: 0;
-  }
-}
-
-.info-section {
-  margin: 0.5rem;
-  text-align: center;
 }
 
 .nav-container {
-  grid-area: nav;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
-  margin-top: 0.5rem;
 }
 
-@media (min-width: 768px) {
-  .nav-container {
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 0;
-  }
-}
-
-.nav-column {
+.nav-list {
   display: flex;
-  flex-direction: column;
-  list-style: none;
-  padding: 0;
-  margin: 0.5rem; /* увеличил отступ между колонками */
+  justify-content: space-between;
+  align-items: center;
 }
 
 .nav-item {
@@ -154,8 +110,6 @@ const emit = defineEmits(['openDrawer'])
   cursor: pointer;
   color: #718096;
   transition: color 0.3s ease;
-  margin-bottom: 0.5rem;
-  white-space: nowrap;
 }
 
 .nav-item:hover {
@@ -164,5 +118,65 @@ const emit = defineEmits(['openDrawer'])
 
 .nav-icon {
   margin-right: 0.5rem;
+}
+
+.phone-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* Медиа-запросы */
+
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .info-container {
+    margin-bottom: 1rem;
+  }
+
+  .nav-container {
+    flex-direction: column;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .phone-container {
+    margin-top: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .header-container {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .info-container {
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 0;
+  }
+
+  .nav-container {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  .nav-list {
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  .phone-container {
+    margin-top: 0;
+  }
 }
 </style>
