@@ -51,5 +51,5 @@ provide('cart', { cart, closeDrawer, openDrawer, addToCart, removeFromCart })
       <router-view> </router-view>
     </div>
   </div>
-  <Futi />
+  <Footer />
 </template>
