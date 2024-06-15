@@ -1,73 +1,43 @@
 <template>
-  <footer class="footer" :class="{ 'footer-ru': locale === 'ru' }" id="footer">
-    <div class="footer__container">
-      <div class="footer__social">
-        <p>Мы в соц. сетях:</p>
-        <ul class="social-links">
-          <li>
-            <a href="#" target="_blank" rel="noopener noreferrer">
-              <img src="/icons/vk.svg" alt="ВКонтакте" />
-            </a>
-          </li>
-          <li>
-            <a href="#" target="_blank" rel="noopener noreferrer">
-              <img src="/icons/instagram.svg" alt="Instagram" />
-            </a>
-          </li>
-          <li>
-            <a href="#" target="_blank" rel="noopener noreferrer">
-              <img src="/icons/youtube.svg" alt="YouTube" />
-            </a>
-          </li>
-        </ul>
-      </div>
+  <footer
+    class="h-44 pt-10 w-4/5 mx-auto content-center auto-rows-auto pb-10 flex flex-row items-center justify-between"
+  >
+    <div class="flex flex-col items-start">
+      <ul class="">
+        <router-link to="/rabota"
+          ><li class="pt-4 text-xl max-w-xs border-solid">Работа в фирме "1С"</li></router-link
+        >
+        <router-link to="/vacansii"
+          ><li class="pb-4 text-xl max-w-xs border-solid">Вакансии в фирме "1С"</li></router-link
+        >
+        <p class="text-xs">ООО "АРКИС" © 2018 - 2024</p>
+      </ul>
+    </div>
+    <img height="100" width="250" src="D:\Дипломка\архив\vue-sait\public\trace.svg" alt="1C" />
+    <div class="flex flex-row space-x-3 pt-5">
+      <a href="https://api.whatsapp.com/send?phone=89054012969" target="_blank"
+        ><img
+          height="50"
+          width="50"
+          src="D:\Дипломка\архив\vue-sait\public\whatsapp-whats-app-svgrepo-com.svg"
+          alt="whatsapp"
+      /></a>
+
+      <a href="https://t.me/JackP1888" target="_blank" rel="noopener noreferrer"
+        ><img
+          height="50"
+          width="50"
+          src="D:\Дипломка\архив\vue-sait\public\telegram-svgrepo-com.svg"
+          alt="Telegram"
+      /></a>
+      <a href="https://vk.com/prostoghora" target="_blank" rel="noopener noreferrer">
+        <img
+          src="D:\Дипломка\архив\vue-sait\public\vk-1-logo-svgrepo-com.svg"
+          alt="ВКонтакте"
+          height="50"
+          width="50"
+        />
+      </a>
     </div>
   </footer>
 </template>
-
-<style scoped>
-.footer {
-  background-color: #f0f0f0;
-  padding: 20px 0;
-  text-align: center;
-}
-
-.footer__container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.footer__social {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.social-links {
-  display: flex;
-  list-style: none;
-  padding: 0;
-  margin-top: 10px;
-}
-
-.social-links li {
-  margin: 0 10px;
-}
-
-.social-links img {
-  width: 30px;
-  height: 30px;
-}
-
-@media (min-width: 768px) {
-  .footer {
-    text-align: left;
-  }
-
-  .footer__social {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-}
-</style>
