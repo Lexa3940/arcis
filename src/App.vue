@@ -3,7 +3,7 @@ import { ref, watch, provide, computed } from 'vue'
 
 import Header from './components/Header.vue'
 import Drawer from './components/Drawer.vue'
-
+import Footer from './components/Footer.vue'
 const cart = ref([])
 
 const drawerOpen = ref(false)
@@ -43,7 +43,7 @@ provide('cart', { cart, closeDrawer, openDrawer, addToCart, removeFromCart })
   <Drawer v-if="drawerOpen" :total-price="totalPrice" />
   <div class="bg-white w-4/5 m-auto rounded-xl shadow-xl mt-14">
     <Header :total-price="totalPrice" @open-drawer="openDrawer" />
-
+<Footer />
     <div class="p-10">
       <router-view> </router-view>
     </div>
