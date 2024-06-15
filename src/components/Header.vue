@@ -2,7 +2,7 @@
 defineProps({
   totalPrice: Number
 })
-  
+
 const emit = defineEmits(['openDrawer'])
 </script>
 
@@ -13,12 +13,12 @@ const emit = defineEmits(['openDrawer'])
     </router-link>
 
     <div class="info-container">
-      <div class="working-hours">
+      <div class="info-section working-hours">
         <h1>Режим работы:</h1>
         <p>Ежедневно</p>
         <p>С 8:00 до 18:00</p>
       </div>
-      <div class="phone-numbers">
+      <div class="info-section phone-numbers">
         <h1>Номера телефонов:</h1>
         <p>+7-995-208-44-74</p>
         <p>+7-861-205-00-91</p>
@@ -26,7 +26,6 @@ const emit = defineEmits(['openDrawer'])
     </div>
 
     <div class="nav-container">
-      <!-- Колонка 1 -->
       <div class="nav-column">
         <li @click="() => emit('openDrawer')" class="nav-item">
           <img src="/cart.svg" alt="Cart" class="nav-icon" />
@@ -39,7 +38,6 @@ const emit = defineEmits(['openDrawer'])
           </li>
         </router-link>
       </div>
-      <!-- Колонка 2 -->
       <div class="nav-column">
         <router-link to="/profile">
           <li class="nav-item">
@@ -62,15 +60,13 @@ const emit = defineEmits(['openDrawer'])
 .header-container {
   display: grid;
   grid-template-areas:
-    "logo"
-    "info"
-    "nav";
-  grid-template-rows: auto auto auto;
-  grid-template-columns: 1fr;
+    "logo info"
+    "nav nav";
+  grid-template-rows: auto auto;
+  grid-template-columns: 1fr 1fr;
   grid-gap: 1rem;
   border-bottom: 1px solid #cbd5e0;
   padding: 1rem;
-  text-align: center;
 }
 
 @media (min-width: 768px) {
@@ -79,7 +75,6 @@ const emit = defineEmits(['openDrawer'])
       "logo info nav";
     grid-template-columns: auto 1fr auto;
     align-items: center;
-    text-align: left;
     grid-gap: 1rem;
     padding: 1rem;
   }
@@ -110,7 +105,6 @@ const emit = defineEmits(['openDrawer'])
   justify-content: center;
   align-items: center;
   margin-top: 0.5rem;
-  margin-right: 1rem;
 }
 
 @media (min-width: 768px) {
@@ -123,8 +117,7 @@ const emit = defineEmits(['openDrawer'])
   }
 }
 
-.working-hours,
-.phone-numbers {
+.info-section {
   margin: 0.5rem;
   text-align: center;
 }
