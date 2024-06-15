@@ -40,12 +40,16 @@ provide('cart', { cart, closeDrawer, openDrawer, addToCart, removeFromCart })
 </script>
 
 <template>
-  <Drawer v-if="drawerOpen" :total-price="totalPrice" />
+  <Opisanie v-if="cardOpen" />
+  <Drawer v-else-if="drawerOpen" :total-price="totalPrice" />
+
   <div class="bg-white w-4/5 m-auto rounded-xl shadow-xl mt-14">
     <Header :total-price="totalPrice" @open-drawer="openDrawer" />
-<Footer />
+
+    <Card @open-card="openCard" />
     <div class="p-10">
       <router-view> </router-view>
     </div>
   </div>
+  <Futi />
 </template>
