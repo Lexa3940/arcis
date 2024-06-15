@@ -1,4 +1,24 @@
 {
+  "name": "My Awesome Project",
+  "version": "1.0.0",
+  "description": "A Vercel project built with Next.js",
+  "build": {
+    "command": "npm run build",
+    "output": "out"
+  },
+  "framework": {
+    "name": "next.js"
+  },
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
+}
+
+
+{
     "rewrites": [
         {"source": "/(.*)", "destination": "/"}
     ]
