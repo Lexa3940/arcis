@@ -13,17 +13,17 @@
         </ul>
       </div>
       <div class="footer__logo">
-        <img src=".\архив\vue-sait\public\trace.svg" alt="1C" class="footer__logo-img" />
+        <img src="архив\vue-sait\public\trace.svg" alt="1C" class="footer__logo-img" />
       </div>
       <div class="footer__social">
         <a href="https://api.whatsapp.com/send?phone=89054012969" target="_blank" class="footer__social-link">
-          <img src=".\архив\vue-sait\public\whatsapp-whats-app-svgrepo-com.svg" alt="whatsapp" class="footer__social-icon" />
+          <img src="архив\vue-sait\public\whatsapp-whats-app-svgrepo-com.svg" alt="whatsapp" class="footer__social-icon" />
         </a>
         <a href="https://t.me/JackP1888" target="_blank" rel="noopener noreferrer" class="footer__social-link">
-          <img src=".\архив\vue-sait\public\telegram-svgrepo-com.svg" alt="Telegram" class="footer__social-icon" />
+          <img src="архив\vue-sait\public\telegram-svgrepo-com.svg" alt="Telegram" class="footer__social-icon" />
         </a>
         <a href="https://vk.com/prostoghora" target="_blank" rel="noopener noreferrer" class="footer__social-link">
-          <img src=".\архив\vue-sait\public\vk-1-logo-svgrepo-com.svg" alt="ВКонтакте" class="footer__social-icon" />
+          <img src="архив\vue-sait\public\vk-1-logo-svgrepo-com.svg" alt="ВКонтакте" class="footer__social-icon" />
         </a>
       </div>
     </div>
