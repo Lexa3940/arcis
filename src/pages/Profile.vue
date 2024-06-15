@@ -31,13 +31,6 @@
     <div>
       <img
         class="pt-12 pb-12"
-        src="C:\product\1674518303_catherineasquithgallery-com-p-fon-dlya-reklami-salona-krasoti-12.png"
-        alt="Салон красоты"
-      />
-    </div>
-    <div>
-      <img
-        class="pt-12 pb-12"
         src="C:\product\Gazprom_Logo_rus.svg (1).png"
         alt="Газпром"
       />
