@@ -49,7 +49,7 @@ const emit = defineEmits(['openDrawer'])
         <router-link to="/conf">
           <li class="nav-item flex items-center cursor-pointer text-grey-500 hover:text-black">
             <img
-              src="\public\product\password_protect_secure_security_privacy_lock_padlock_icon_219328.svg"
+              src="/product/password_protect_secure_security_privacy_lock_padlock_icon_219328.svg"
               alt="confi"
               class="nav-icon pr-1.5 text-xl"
             />
